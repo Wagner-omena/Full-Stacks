@@ -6,5 +6,18 @@
 int main (){
     setlocale(LC_ALL, "portuguese");
 
+    int menu = 0;
+    int escolha = 0;
+
+    for (int escolha = 0; escolha == 0;){
+        printf ("\t\t## BEM VINDO ##\n");
+        printf ("Sistema de cadastro de anunos e fucionario.\n");
+        printf ("\t1 - Cadastro usuário\n");
+        printf ("\t2 - Consultar usuário\n");
+        printf ("\t3 - Deletar usuário\n");
+        printf ("Por favor escolha uma opção: ");
+        scanf ("%d", &escolha);
+    }
+
     return 0;
 }
