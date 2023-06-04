@@ -3,6 +3,25 @@
 #include <string.h>
 #include <locale.h>
 
+int cadastroUsuario(){
+
+    char cpf[50];
+    char nome[50];
+
+    printf ("Cadastro de Usuário EBAC!\n");
+    printf ("Digite o CPF a ser cadastrado:");
+    scanf ("%d", &cpf);
+
+    return 0;
+}
+int consultarUsuario(){
+
+    return 0;
+}
+int deletarUsuario(){
+
+}
+
 int main (){
     setlocale(LC_ALL, "portuguese");
 
@@ -17,6 +36,18 @@ int main (){
         printf ("\t3 - Deletar usuário\n\n");
         printf ("Por favor escolha uma opção: ");
         scanf ("%d", &escolha);
+
+        switch (escolha){
+            case 1:
+            cadastroUsuario();
+            break;
+            case 2:
+            consultarUsuario();
+            break;
+            case 3:
+            deletarUsuario();
+            break;
+        }
     }
 
     return 0;
