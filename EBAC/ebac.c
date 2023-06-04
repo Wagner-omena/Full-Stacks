@@ -9,7 +9,7 @@ int main (){
     int menu = 0;
     int escolha = 0;
 
-    for (int escolha = 0; escolha == 0;){
+    for (int menu = 0; menu == 0;){
         printf ("\t\t## BEM VINDO ##\n");
         printf ("Sistema de cadastro de anunos e fucionario.\n\n");
         printf ("\t1 - Cadastro usuário\n");
