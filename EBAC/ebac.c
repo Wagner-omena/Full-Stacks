@@ -6,11 +6,11 @@
 int cadastroUsuario(){
 
     char cpf[50];
-    char nome[50];
+   // char nome[50];
 
     printf ("Cadastro de Usuário EBAC!\n");
     printf ("Digite o CPF a ser cadastrado:");
-    scanf ("%d", &cpf);
+    scanf ("%s", &cpf);
 
     return 0;
 }
@@ -20,6 +20,7 @@ int consultarUsuario(){
 }
 int deletarUsuario(){
 
+    return 0;
 }
 
 int main (){
