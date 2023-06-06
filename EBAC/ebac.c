@@ -83,6 +83,7 @@ int main (){
             if (escolha < 0 || escolha > 3){
                 printf("Por favor escolha uma opção valida!");
             }
+            system("pause");
         }
     }
 
