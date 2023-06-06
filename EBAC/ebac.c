@@ -45,6 +45,8 @@ int cadastroUsuario(){
     return 0;
 }
 int consultarUsuario(){
+    setlocale(LC_ALL, "portuguese");
+    printf("Consulta de Usuário, por favor digite o CPF a ser consultado:");
 
     return 0;
 }
