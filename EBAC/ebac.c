@@ -5,12 +5,42 @@
 
 int cadastroUsuario(){
 
+    char arquivo[50];
     char cpf[50];
-   // char nome[50];
+    char nome[50];
+    char sobreNome[50];
+    char cargo[50];
 
-    printf ("Cadastro de Usuário EBAC!\n");
+    printf ("Cadastro de Usuário EBAC!\n\n");
     printf ("Digite o CPF a ser cadastrado:");
     scanf ("%s", &cpf);
+    strcpy(arquivo,cpf);
+
+    FILE *file;
+    file = fopen(arquivo, "w");
+    fprintf (file,"CPF: %s\n",cpf);
+    fclose (file);
+
+    printf("Digite o nome do usuário: ");
+    scanf("%s",nome);
+
+    file = fopen(arquivo, "a");
+    fprintf(file,"Nome: %s\n",nome);
+    fclose(file);
+
+    printf("Digite o sobre nome:");
+    scanf("%s",sobreNome);
+
+    file = fopen(arquivo, "a");
+    fprintf(file,"Sobre-nome: %s\n", sobreNome);
+    fclose(file);
+
+    printf("Digite o Cargo: ");
+    scanf("%s",cargo );
+
+    file = fopen(arquivo, "a");
+    fprintf(file,"Cargo: %s\n",cargo);
+    fclose(file);
 
     return 0;
 }
@@ -30,6 +60,7 @@ int main (){
     int escolha = 0;
 
     for (; menu == 0;){
+        system("cls");
         printf ("\t\t## BEM VINDO ##\n");
         printf ("Sistema de cadastro de anunos e fucionario.\n\n");
         printf ("\t1 - Cadastro usuário\n");
@@ -48,6 +79,10 @@ int main (){
             case 3:
             deletarUsuario();
             break;
+            default:
+            if (escolha < 0 || escolha > 3){
+                printf("Por favor escolha uma opção valida!");
+            }
         }
     }
 
