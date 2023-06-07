@@ -3,7 +3,7 @@
 #include <string.h> //Biblioteca de manipulação das strings
 #include <locale.h> //Biblioteca de alocação de texto por região
 
-int cadastroUsuario(){
+int cadastroUsuario(){ 
 
     char arquivo[50];
     char cpf[50];
@@ -59,12 +59,12 @@ int deletarUsuario(){
 }
 
 int main (){
-    setlocale(LC_ALL, "portuguese");
+    setlocale(LC_ALL, "portuguese"); // Deija o texto em Portugues.
 
-    int menu = 0;
-    int escolha = 0;
+    int menu = 0; // menu do usuário.
+    int escolha = 0; 
 
-    for (; menu == 0;){
+    for (; menu == 0;){ // Opçao do menu para o usuário escolher. 
         system("cls");
         printf ("\t\t## BEM VINDO ##\n");
         printf ("Sistema de cadastro de anunos e fucionario.\n\n");
@@ -72,7 +72,8 @@ int main (){
         printf ("\t2 - Consultar usuário\n");
         printf ("\t3 - Deletar usuário\n\n");
         printf ("Por favor escolha uma opção: ");
-        scanf ("%d", &escolha);
+
+        scanf ("%d", &escolha); // Entra da escolha que o usuário vai fazer.
 
         switch (escolha){
             case 1:
