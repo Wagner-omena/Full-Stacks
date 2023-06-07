@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <locale.h>
+#include <stdio.h> //Biblioteca de comunicação com o usuário
+#include <stdlib.h> //Biblioteca de alocações de espaço na memoria
+#include <string.h> //Biblioteca de manipulação das strings
+#include <locale.h> //Biblioteca de alocação de texto por região
 
 int cadastroUsuario(){
 
