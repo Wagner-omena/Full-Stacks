@@ -14,12 +14,13 @@ int cadastroUsuario(){
     printf ("Cadastro de Usuário EBAC!\n\n");//Istrução para o usuário
     printf ("Digite o CPF a ser cadastrado:");
     scanf ("%s", &cpf);
-    strcpy(arquivo,cpf);
+    strcpy(arquivo,cpf); //Copia a string
+    strcat(arquivo,".txt");
 
     FILE *file;
     file = fopen(arquivo, "w");
     fprintf (file,"CPF: %s\n",cpf);
-    fclose (file);//Copia a string
+    fclose (file);//Feichar o arquivo
 
     printf("Digite o nome do usuário: ");//Istrução para o usuário
     scanf("%s",nome);
@@ -32,7 +33,7 @@ int cadastroUsuario(){
     scanf("%s",sobreNome);
 
     file = fopen(arquivo, "a");
-    fprintf(file,"Sobre-nome: %s\n", sobreNome);
+    fprintf(file,"Sobrenome: %s\n", sobreNome);
     fclose(file);
 
     printf("Digite o Cargo: ");
@@ -47,25 +48,32 @@ int cadastroUsuario(){
 int consultarUsuario(){
     setlocale(LC_ALL, "portuguese");
     char cpf[50];
+    char arquivo[50];
     char conteudo[200];
 
-    printf("Consulta de Usuário, por favor digite o CPF a ser consultado: ");
+    system("cls");
+
+    printf("\n\t\tConsulta de Usuário\n\nPor favor digite o CPF a ser consultado: ");
     scanf("%s",cpf);
 
+    strcpy(arquivo, cpf);
+    strcat(arquivo, ".txt");
+
     FILE *file;
-    file = fopen(cpf,"r");
+    file = fopen(arquivo,"r");
 
     if (file == NULL){
         printf("CPF não encontrado!\n");
     }
+    printf("\tInformações do usuário!\n");
     while (fgets(conteudo,200,file)!= NULL)
     {
-        printf("\nEssas são as informações do usuário: ");
+        //printf("\nEssas são as informações do usuário:\n");
         printf("%s",conteudo);
-        printf("\n\n");
-    }system("pause");
-    
-
+        printf("\t\t\t");
+    }
+    fclose(file);
+    system("pause");
     return 0;
 }
 int deletarUsuario(){
