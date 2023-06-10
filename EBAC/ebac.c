@@ -19,9 +19,9 @@ int cadastroUsuario(){
     strcpy(arquivo,cpf); //Copia a string
     
 
-    FILE *file;
-    file = fopen(arquivo, "w");
-    fprintf (file,"CPF: %s\n",cpf);
+    FILE *file; //Cria o arquivo
+    file = fopen(arquivo, "w"); //Abre o arquivo e o "w" significa esvreva
+    fprintf (file,"CPF: %s\n",cpf); //Escreve no arquivo
     fclose (file);//Feichar o arquivo
 
     printf("Digite o nome do usuário: ");//Istrução para o usuário
@@ -58,9 +58,9 @@ int consultarUsuario(){
     scanf("%s",cpf);
 
     FILE *file;
-    file = fopen(cpf,"r");
+    file = fopen(cpf,"r"); //Abre o arquivo e "r" significa ler o arquivo
 
-    if (file == NULL){
+    if (file == NULL){ //Verifica se o CPF existe
         printf("CPF não encontrado!\n");
     }
     printf("\n\tInformações do usuário!\n\n");
@@ -73,7 +73,7 @@ int consultarUsuario(){
 
     return 0;
 }
-int deletarUsuario(){
+int deletarUsuario(){ //Sistema para pode excluir o usuario
     char cpf[50];
 
     system ("cls");
@@ -81,7 +81,7 @@ int deletarUsuario(){
     printf("\t\tDeletar Usuário\n\nDigite o CPF a ser deletado:");
     scanf("%s", cpf);
 
-    if(remove(cpf) == 0){
+    if(remove(cpf) == 0){ //Remove o CPF escolhido e verifica se o comando foi bem sucedido
         printf("Usuário deletado com sucesso!\n");
     }else {
         printf("Usuário não encontrado.");
@@ -101,14 +101,15 @@ int main (){
 
         printf ("\t\t## BEM VINDO ##\n"); //Tela de boas vimda para os usuario
         printf ("Sistema de cadastro de anunos e fucionario.\n\n");
+
         printf ("\t1 - Cadastro usuário\n");//Menu de escolha do usuário
         printf ("\t2 - Consultar usuário\n");
         printf ("\t3 - Deletar usuário\n\n");
-        printf ("Por favor escolha uma opção: ");
 
+        printf ("Por favor escolha uma opção: ");
         scanf ("%d", &escolha); // Entra da escolha que o usuário vai fazer.
 
-        switch (escolha){
+        switch (escolha){ //As escolhas que pode ser feitas
             case 1:
             cadastroUsuario();
             break;
@@ -119,12 +120,12 @@ int main (){
             deletarUsuario();
             break;
             default:
-            if (escolha < 0 || escolha > 3){
+            if (escolha < 0 || escolha > 3){ //casa o usuário escolha uma opção não existente
                 printf("Por favor escolha uma opção valida!");
             }
-            system("pause");
+            system("pause"); //Pausa o systema e espera que o usuário aperte qualquer tecla para continua
         }
     }
 
-    return 0;
+    return 0; //Retorna 0 para dizer que a execução foi bem sucedida
 }
