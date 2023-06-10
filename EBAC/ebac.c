@@ -15,7 +15,7 @@ int cadastroUsuario(){
 
     printf ("Cadastro de Usuário EBAC!\n\n");//Istrução para o usuário
     printf ("Digite o CPF a ser cadastrado:");
-    scanf ("%s", &cpf);
+    scanf ("%s", cpf);
     strcpy(arquivo,cpf); //Copia a string
     
 
@@ -74,7 +74,19 @@ int consultarUsuario(){
     return 0;
 }
 int deletarUsuario(){
+    char cpf[50];
 
+    system ("cls");
+
+    printf("\t\tDeletar Usuário\n\nDigite o CPF a ser deletado:");
+    scanf("%s", cpf);
+
+    if(remove(cpf) == 0){
+        printf("Usuário deletado com sucesso!\n");
+    }else {
+        printf("Usuário não encontrado.");
+    }
+    system("pause");
     return 0;
 }
 
