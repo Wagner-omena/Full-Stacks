@@ -21,6 +21,10 @@ int cadastroUsuario(){
 
     FILE *file; //Cria o arquivo
     file = fopen(arquivo, "w"); //Abre o arquivo e o "w" significa esvreva
+    if(file == NULL){
+        printf("Erro ao tenta criar o arquivo!\n");
+        return 1;
+    }
     fprintf (file,"CPF: %s\n",cpf); //Escreve no arquivo
     fclose (file);//Feichar o arquivo
 
@@ -28,6 +32,10 @@ int cadastroUsuario(){
     scanf("%s",nome);
 
     file = fopen(arquivo, "a");
+    if(file == NULL){
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
     fprintf(file,"Nome: %s\n",nome);
     fclose(file);
 
@@ -35,7 +43,10 @@ int cadastroUsuario(){
     scanf("%s",sobreNome);
 
     file = fopen(arquivo, "a");
-    
+    if(file == NULL){
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
     fprintf(file,"Sobrenome: %s\n", sobreNome);
     fclose(file);
 
