@@ -35,6 +35,7 @@ int cadastroUsuario(){
     scanf("%s",sobreNome);
 
     file = fopen(arquivo, "a");
+    
     fprintf(file,"Sobrenome: %s\n", sobreNome);
     fclose(file);
 
@@ -42,6 +43,10 @@ int cadastroUsuario(){
     scanf("%s",cargo );
 
     file = fopen(arquivo, "a");
+    if(file == NULL){
+        print("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
     fprintf(file,"Cargo: %s\n",cargo);
     fclose(file);
 
