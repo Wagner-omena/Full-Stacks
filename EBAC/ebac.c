@@ -32,7 +32,7 @@ int cadastroUsuario(){
     scanf("%s",nome);
 
     file = fopen(arquivo, "a");
-    if(file == NULL){
+    if(file == NULL){ //verifica se o aquivo abril com sucesso
         printf("Erro ao abrir o arquivo.\n");
         return 1;
     }
