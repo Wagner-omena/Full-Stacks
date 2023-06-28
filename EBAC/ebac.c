@@ -3,7 +3,7 @@
 #include <string.h> //Biblioteca de manipulação das strings
 #include <locale.h> //Biblioteca de alocação de texto por região
 
-int cadastroUsuario(){ 
+int cadastroUsuario(){  //sistema de cadastro de usuario
 
     char arquivo[50];
     char cpf[50];
@@ -11,11 +11,11 @@ int cadastroUsuario(){
     char sobreNome[50];
     char cargo[50];
 
-    system("cls");
+    system("cls"); //Limpa as mensagem anterio para deixa o menu limpo de mensagem anterior 
 
     printf ("Cadastro de Usuário EBAC!\n\n");//Istrução para o usuário
     printf ("Digite o CPF a ser cadastrado:");
-    scanf ("%s", cpf);
+    scanf ("%s", cpf); // Ler o que o usuario digitar 
     strcpy(arquivo,cpf); //Copia a string
     
 
@@ -55,7 +55,7 @@ int cadastroUsuario(){
 
     file = fopen(arquivo, "a");
     if(file == NULL){
-        print("Erro ao abrir o arquivo.\n");
+        printf("Erro ao abrir o arquivo.\n");
         return 1;
     }
     fprintf(file,"Cargo: %s\n",cargo);
@@ -94,7 +94,7 @@ int deletarUsuario(){ //Sistema para pode excluir o usuario
 
     system ("cls");
 
-    printf("\t\tDeletar Usuário\n\nDigite o CPF a ser deletado:");
+    printf("\t\tDeletar Usuário\n\nDigite o CPF a ser deletado:"); // Menu informativo para poder deletar usuario
     scanf("%s", cpf);
 
     if(remove(cpf) == 0){ //Remove o CPF escolhido e verifica se o comando foi bem sucedido
@@ -121,6 +121,7 @@ int main (){
         printf ("\t1 - Cadastro usuário\n");//Menu de escolha do usuário
         printf ("\t2 - Consultar usuário\n");
         printf ("\t3 - Deletar usuário\n\n");
+        printf ("\t4 - sair do sistema.\n\n");
 
         printf ("Por favor escolha uma opção: ");
         scanf ("%d", &escolha); // Entra da escolha que o usuário vai fazer.
@@ -135,8 +136,12 @@ int main (){
             case 3:
             deletarUsuario();
             break;
+            case 4:
+            printf("sistema fechado com sucesso.");
+            return 0;
+            break;
             default:
-            if (escolha < 0 || escolha > 3){ //casa o usuário escolha uma opção não existente
+            if (escolha < 0 || escolha > 4){ //casa o usuário escolha uma opção não existente
                 printf("Por favor escolha uma opção valida!");
             }
             system("pause"); //Pausa o systema e espera que o usuário aperte qualquer tecla para continua
