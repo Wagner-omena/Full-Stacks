@@ -111,15 +111,15 @@ int main (){
 
     int menu = 0; // menu do usuário.
     int escolha = 0;
-    char senha[] = "a";
+    char senha[] = "a"; //senha para pode acessar o sistema
     int comparacao;
 
     printf("\t\t### Cartório da EBAC ###\n\n");
     printf("Login de adminstrador !\n\n Digite a sua senha: ");
     scanf("%s", senha);
 
-    comparacao = strcmp(senha, "admin");
-    if (comparacao == 0){
+    comparacao = strcmp(senha, "admin"); // strcmp usado para comára strings 
+    if (comparacao == 0){ // verifica se a senha estar correta
 
     for (; menu == 0;){ // Opçao do menu para o usuário escolher. 
         system("cls"); // Limpa as mensangem anterio
@@ -158,7 +158,7 @@ int main (){
     }
 
     }else {
-        printf("Senha errada");
+        printf("Senha errada");//informa que a senha esta errada
     }
 
     return 0; //Retorna 0 para dizer que a execução foi bem sucedida
