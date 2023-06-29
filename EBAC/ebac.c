@@ -110,7 +110,16 @@ int main (){
     setlocale(LC_ALL, "portuguese"); // Define o texto em Portugues.
 
     int menu = 0; // menu do usuário.
-    int escolha = 0; 
+    int escolha = 0;
+    char senha[] = "a";
+    int comparacao;
+
+    printf("\t\t### Cartório da EBAC ###\n\n");
+    printf("Login de adminstrador !\n\n Digite a sua senha: ");
+    scanf("%s", senha);
+
+    comparacao = strcmp(senha, "admin");
+    if (comparacao == 0){
 
     for (; menu == 0;){ // Opçao do menu para o usuário escolher. 
         system("cls"); // Limpa as mensangem anterio
@@ -146,6 +155,10 @@ int main (){
             }
             system("pause"); //Pausa o systema e espera que o usuário aperte qualquer tecla para continua
         }
+    }
+
+    }else {
+        printf("Senha errada");
     }
 
     return 0; //Retorna 0 para dizer que a execução foi bem sucedida
