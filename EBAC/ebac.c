@@ -95,12 +95,12 @@ int deletarUsuario(){ //Sistema para pode excluir o usuario
     system ("cls");
 
     printf("\t\tDeletar Usuário\n\nDigite o CPF a ser deletado:"); // Menu informativo para poder deletar usuario
-    scanf("%s", cpf);
+    scanf("%s",cpf);
 
     if(remove(cpf) == 0){ //Remove o CPF escolhido e verifica se o comando foi bem sucedido
         printf("Usuário deletado com sucesso!\n");
     }else {
-        printf("Usuário não encontrado.");
+        printf("Usuário não encontrado. CPF errado ou inexistente!\n\n");
     }
     system("pause");
     return 0;
